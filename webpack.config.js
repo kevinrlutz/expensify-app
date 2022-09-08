@@ -8,7 +8,8 @@ module.exports = (env) => {
 		entry: './src/app.js',
 		mode: 'development',
 		output: {
-			path: path.join(__dirname, 'public'),
+			path: path.join(__dirname, 'public', 'dist'),
+			publicPath: '/public/dist/',
 			filename: 'bundle.js',
 		},
 		plugins: [new MiniCssExtractPlugin()],
@@ -32,7 +33,11 @@ module.exports = (env) => {
 		devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
 		mode: isProduction ? 'production' : 'development',
 		devServer: {
-			static: path.join(__dirname, 'public'),
+			static: {
+				directory: path.join(__dirname, 'public'),
+				publicPath: '/',
+			},
+
 			historyApiFallback: true,
 		},
 		resolve: {
