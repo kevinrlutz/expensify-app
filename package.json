@@ -9,7 +9,7 @@
 	"author": "Kevin Lutz",
 	"license": "MIT",
 	"scripts": {
-		"build:dev": "webpack",
+		"build:dev": "webpack --watch",
 		"build:prod": "webpack --env production",
 		"dev-server": "webpack-dev-server",
 		"test": "jest --config=jest.config.json",
@@ -17,10 +17,12 @@
 		"heroku-postbuild": "npm run build:prod"
 	},
 	"dependencies": {
+		"@webpack-cli/serve": "^1.7.0",
 		"babel-cli": "^6.26.0",
 		"babel-plugin-transform-object-rest-spread": "^6.23.0",
 		"css-loader": "^6.7.1",
 		"express": "^4.15.4",
+		"firebase": "^4.2.0",
 		"mini-css-extract-plugin": "^2.6.1",
 		"moment": "^2.18.1",
 		"node-sass": "^7.0.1",

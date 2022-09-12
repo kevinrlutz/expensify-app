@@ -34,8 +34,9 @@ module.exports = (env) => {
 		mode: isProduction ? 'production' : 'development',
 		devServer: {
 			static: {
-				directory: path.join(__dirname, 'public'),
+				directory: path.resolve('public'),
 				publicPath: '/',
+				serveIndex: true,
 			},
 
 			historyApiFallback: true,
